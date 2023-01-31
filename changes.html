@@ -1,0 +1,14 @@
+
+{% block content %}
+    <h1>{% block title %} Edit pet info {% endblock %}</h1>
+    <form method = "POST">
+        {# This hidden tag is for CSRF #}
+        {{ form.hidden_tag()}}
+        {{form.pid.label}} : {{form.pid}}
+        {{form.owner_name.label}} : {{form.ownder_name}}
+        {{ form.pet_name.label }} : {{form.pet_name}} <br>
+        {{form.ptype.label}} : {{form.ptype}}
+        {{ form.p_breed.label }} : {{form.p_breed}} <br>
+        {{ form.submit() }}
+    </form>
+{% endblock %}

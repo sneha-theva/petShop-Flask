@@ -1,0 +1,27 @@
+
+{% block content %}
+    <h1>{% block title %} Pet List {% endblock %}</h1>
+    
+        <table id="table1">
+            <tr>
+                <th>ID</th>
+                <th> OWNER NAME</th>
+                <th>PET NAME</th>
+                <th> PET TYPE</th>
+                <th>PET BREED</th>
+                <th colspan="2">Operations</th>
+
+            </tr>
+            
+            <tr>
+                <td>{{pet[0]}}</td>
+                <td>{{pet[1]}}</td>
+                <td>{{pet[2]}}</td>
+                <td>{{pet[3]}}</td>
+                <td><a href=" {{ url_for('delete', ids = pet[0])}}"><button>Delete</button></a></td>
+                <td><a href=" {{ url_for('edit', ids = pet[0])}}"><button>Edit</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+{% endblock %}
